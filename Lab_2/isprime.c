@@ -1,29 +1,21 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int main(void) 
-{
+int main(void) {
 	int n1 = 0;
 	int n2 = 0;
-	int i;
-	int j;
-	int prime;
-	
+	int notPrime;
 	scanf("%d%d", &n1, &n2);
-	for(i = n1; i <= n2; i++){
-		prime = 1;
-		printf("WHY WONT YOU PRINT CUNT");
-		for(j = 3; j<i; j++){
-			if(j / i == 0){
-				prime = 0;
-				printf("%d\n", j / i);
+	for (int i = n1; i <= n2; i++){
+		notPrime = false;
+		for (int j = 2; j <= i/2; ++j){
+			if (i%j == 0){
+				notPrime = true;
 			}
 		}
-		if (prime == 1){
+		if(notPrime == false){
 			printf("%d\n", i);
-		} else {
-			printf("ruined");
 		}
 	}
-	printf("DONE");
 	return 0;
 }
